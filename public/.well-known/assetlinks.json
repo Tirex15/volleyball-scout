@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.volleyball_scout_theta.twa",
+        "sha256_cert_fingerprints": ["2C:E5:D0:C1:8A:8E:A1:EC:20:70:F4:11:FE:CE:0C:3D:09:3C:BA:1C:30:09:C7:D2:B2:36:BE:38:EB:CC:33:32"]
+      }
+    }]
