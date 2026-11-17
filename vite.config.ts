@@ -1,43 +1,43 @@
 import { defineConfig } from 'vite';
-   import react from '@vitejs/plugin-react';
-   import { VitePWA } from 'vite-plugin-pwa';
+import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
-   export default defineConfig({
-     plugins: [
-       react(),
-       VitePWA({
-         registerType: 'autoUpdate',
-         includeAssets: ['icon.svg'],
-         manifest: {
-           name: 'Volleyball Scout Pro',
-           short_name: 'VolleyScout',
-           description: 'Scouting pallavolo professionale offline',
-           theme_color: '#0f172a',
-           background_color: '#0f172a',
-           display: 'standalone',
-           orientation: 'landscape',
-           icons: [
-             {
-               src: '/icon.svg',
-               sizes: 'any',
-               type: 'image/svg+xml',
-               purpose: 'any maskable'
-             }
-           ]
-         },
-         workbox: {
-           globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
-           runtimeCaching: [
-             {
-               urlPattern: /^https:\/\/cdn\.tailwindcss\.com\/.*/i,
-               handler: 'CacheFirst',
-               options: {
-                 cacheName: 'tailwind-cdn-cache',
-                 expiration: { maxEntries: 5, maxAgeSeconds: 60 * 60 * 24 * 365 }
-               }
-             }
-           ]
-         }
-       })
-     ]
-   });
+export default defineConfig({
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['icon.png'],
+      manifest: {
+        name: 'Volleyball Scout Pro',
+        short_name: 'VolleyScout',
+        description: 'Scouting pallavolo professionale offline',
+        theme_color: '#0f172a',
+        background_color: '#0f172a',
+        display: 'standalone',
+        orientation: 'landscape',
+        icons: [
+          {
+            src: '/icon.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable'
+          }
+        ]
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,jpg,ico}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/cdn\.tailwindcss\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'tailwind-cdn-cache',
+              expiration: { maxEntries: 5, maxAgeSeconds: 60 * 60 * 24 * 365 }
+            }
+          }
+        ]
+      }
+    })
+  ]
+});
