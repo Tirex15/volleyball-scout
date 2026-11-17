@@ -30,8 +30,6 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ]
-          }
-        ]
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,ico}'],
